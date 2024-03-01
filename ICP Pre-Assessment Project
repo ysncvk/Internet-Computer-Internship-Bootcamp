@@ -1,0 +1,35 @@
+//ICP Pre-Assessment Project
+
+//calculator canister with motoko
+
+actor calculator {var cell : Int = 0;
+//addition
+public func sum(s : Int) : async Int {
+  cell += s;
+  cell
+};
+//subtraction
+public func minus(s: Int): async Int{
+  cell -= s;
+  cell
+};
+//multiplication
+public func times(s: Int): async Int{
+  cell *= s;
+  cell
+};
+//division
+public func divide(s: Int): async ?Int{
+  if(s == 0) {
+    null
+  } else {
+    cell /= s;
+    ?cell
+  }
+};
+//clear
+public func clear(): async () {
+  cell := 0;
+};
+
+}
